@@ -18,8 +18,9 @@
     <script>
  $(function(){
 	 $("#TRANSFER").click(function(){
-		 $.getJSON("http://localhost:8080/partiel-ioana/api/virement/transfer/last", function(data){
-			 var content= "the beneficiary's account number:" + data.codeP + data.codeC + data.codeB + data.codeG + data.numberAcount + data.codeR;
+		 $.getJSON("http://localhost:8080/partiel1-ioana/api/virement/transfer/last", function(data){
+			 var content= "the beneficiary's account number:" + data.codeP + data.keyC + data.keyB + data.keyG + data.numberAcount + data.keyR;
+			 content+= "transfer:" + data.dateP + data.dateS + data.amount; 
 		$("<div/>", {
 			html:content
 		}).appendTo("body");
